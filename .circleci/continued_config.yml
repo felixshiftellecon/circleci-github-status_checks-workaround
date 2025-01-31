@@ -77,7 +77,6 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Alpha Workflow Complete"
-          quadrant: "alpha"
   delta-quadrant:
     when: << pipeline.parameters.delta >>
     jobs:
@@ -105,7 +104,6 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Delta Workflow Complete"
-          quadrant: "delta"
   gamma-quadrant:
     when: << pipeline.parameters.gamma >>
     jobs:
@@ -133,4 +131,3 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Gamma Workflow Complete"
-          quadrant: "gamma"
