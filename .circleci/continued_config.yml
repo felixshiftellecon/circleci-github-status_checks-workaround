@@ -47,17 +47,7 @@ jobs:
           name: "Completed << parameters.quadrant >> workflow"
           command: echo "The << parameters.quadrant >> workflow has completed successfully"
   the_stand_in:
-    executor: base
-    parameters:
-      quadrant:
-        type: string
-        default: ""
-    steps:
-      - run:
-          name: Stand in for << parameters.quadrant >> workflow
-          command: |
-            echo "Stand in for << parameters.quadrant >> quadrant workflow \n
-             marking complete for github checks"
+    type: no-op
 
 workflows:
   alpha-quadrant:
