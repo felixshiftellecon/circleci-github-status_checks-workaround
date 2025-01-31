@@ -22,13 +22,12 @@ This can be simplified further by having a single job at the end of each workflo
 
 - Easy to implement
 - Prevents human error by being fully automated
-- Stand-in job can use a smaller resource class than the normal jobs
+- Stand-in job can be configured as a [no-op job](https://circleci.com/docs/configuration-reference/#job-type) to remove the need to spin up compute to satisfy the check
 - Stand-in workflow and job make it clear what is happening in both the UI and the CircleCI config
 - Setup config can be locked down with [config policies](https://circleci.com/docs/config-policy-management-overview/)
 
 ### Cons
 
-- Requires a job to be spun up to satisfy the check
 - Increases status check management overhead if workflow cannot be fanned back into a single or a small amount of jobs
 
 ## Demo
@@ -96,3 +95,4 @@ Any parameters that were _not_ set to `true` have a stand-in parameter set to `t
 - [CircleCI's Dynamic Config](https://circleci.com/docs/dynamic-config/)
 - [CircleCI Feature Request to Better Support Status Checks](https://ideas.circleci.com/cloud-feature-requests/p/support-utilizing-checks-with-dynamic-configs)
 - [Alternative Workaround: Exiting early](https://github.com/kelvintaywl-cci/dynamic-config-showcase/tree/main)
+- [no-op Job Type](https://circleci.com/docs/configuration-reference/#job-type)

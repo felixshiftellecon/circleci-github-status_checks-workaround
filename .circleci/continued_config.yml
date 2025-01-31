@@ -47,17 +47,7 @@ jobs:
           name: "Completed << parameters.quadrant >> workflow"
           command: echo "The << parameters.quadrant >> workflow has completed successfully"
   the_stand_in:
-    executor: base
-    parameters:
-      quadrant:
-        type: string
-        default: ""
-    steps:
-      - run:
-          name: Stand in for << parameters.quadrant >> workflow
-          command: |
-            echo "Stand in for << parameters.quadrant >> quadrant workflow \n
-             marking complete for github checks"
+    type: no-op
 
 workflows:
   alpha-quadrant:
@@ -87,7 +77,6 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Alpha Workflow Complete"
-          quadrant: "alpha"
   delta-quadrant:
     when: << pipeline.parameters.delta >>
     jobs:
@@ -115,7 +104,6 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Delta Workflow Complete"
-          quadrant: "delta"
   gamma-quadrant:
     when: << pipeline.parameters.gamma >>
     jobs:
@@ -143,4 +131,3 @@ workflows:
     jobs:
       - the_stand_in:
           name: "Gamma Workflow Complete"
-          quadrant: "gamma"
